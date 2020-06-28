@@ -4,4 +4,5 @@ RUN wget https://fine-build.oss-cn-shanghai.aliyuncs.com/finereport/10.0/tomcat/
 RUN tar -xzvf tomcat-linux.tar.gz
 RUN rm tomcat-linux.tar.gz
 RUN mv -f tomcat-linux /usr/local/tomcat
-ENTRYPOINT [ "/usr/local/tomcat/bin/startup.sh" ]
+EXPOSE 8075
+CMD ["/usr/local/tomcat/bin/catalina.sh", "run"]
