@@ -1,0 +1,7 @@
+FROM tomcat:latest
+WORKDIR /temp
+RUN wget https://fine-build.oss-cn-shanghai.aliyuncs.com/finereport/10.0/tomcat/tomcat-linux.tar.gz
+RUN tar -xzvf tomcat-linux.tar.gz
+RUN rm tomcat-linux.tar.gz
+RUN mv -f tomcat-linux /usr/local/tomcat
+ENTRYPOINT [ "/usr/local/tomcat/bin/startup.sh" ]
