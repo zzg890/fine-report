@@ -6,5 +6,6 @@ RUN rm  tomcat-linux.tar.gz
 RUN rm -rf /usr/local/tomcat/*
 VOLUME [ "/usr/local/tomcat" ]
 COPY startup.sh /
+RUN chmod 777 /startup.sh
 EXPOSE 8080
-CMD ["startup.sh"]
+CMD ["/startup.sh"]
